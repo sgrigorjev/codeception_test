@@ -1,0 +1,19 @@
+class_name: ApiTester
+modules:
+    enabled: [PhpBrowser, REST, \Helper\Api]
+    config: 
+        PhpBrowser:
+            url: http://codeception.local
+        REST:
+            url: http://codeception.local
+            depends: PhpBrowser
+            part: Json
+#    enabled:
+#        - REST:
+#            url: http://codeception.local/api/v1
+#            depends: PhpBrowser
+#            part: Json
+#        - \Helper\Api
+#        - \Helper\Acceptance
+#        - PhpBrowser:
+#            url: http://codeception.local/api/v1

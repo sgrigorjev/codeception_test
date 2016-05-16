@@ -1,0 +1,10 @@
+modules:
+    config:
+        PhpBrowser:
+            url: http://codeception.local
+        REST:
+            url: http://codeception.local
+            accounts:
+                userA: 
+                    username: user1
+                    password: temp123
