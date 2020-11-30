@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Welcome</title>
-    </head>
-    <body>
-        <h3>Hello Guest</h3>
-        Reports: /<a href="output/">output</a>/<a href="output/report.html">report.html</a>
-    </body>
-</html>
+<?php
+
+require_once "../vendor/autoload.php";
+
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Zend\Diactoros\{ServerRequestFactory, Response};
+use CodeceptionCuriosity\Controller;
+
+$router = new League\Route\Router();
+$router->map('GET', '/', [Controller\IndexController::class, 'homeAction']);
+$router->map('POST', '/login', [Controller\LoginController::class, 'loginAction']);
+$router->map('GET', '/login/failed', [Controller\LoginController::class, 'failedAction']);
+
+$request = ServerRequestFactory::fromGlobals();
+$response = $router->dispatch($request);
+
+http_response_code($response->getStatusCode());
+foreach ($response->getHeaders() as $name => $values) {
+    foreach ($values as $value) {
+        header(sprintf('%s: %s', $name, $value), false);
+    }
+}
+
+echo $response->getBody();
