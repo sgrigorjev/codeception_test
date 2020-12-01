@@ -1,7 +1,8 @@
 {
     "autoload": {
         "psr-4": {
-            "CodeceptionCuriosity\\": "src/"
+            "CodeceptionCuriosity\\": "src/",
+            "CodeceptionCuriosity\\Tests\\Unit\\": "tests/unit/"
         }
     },
     "require": {
