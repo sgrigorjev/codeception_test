@@ -26,7 +26,7 @@ class LoginController
         $provider = new UserProvider();
         $user = $provider->find($username);
 
-        if (!$user) {
+        if (!$user || !$user->verifyPassword($password)) {
             header('Location: /login/failed');
             exit;
         }
