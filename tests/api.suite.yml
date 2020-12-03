@@ -8,12 +8,3 @@ modules:
             url: http://codeception.local
             depends: PhpBrowser
             part: Json
-#    enabled:
-#        - REST:
-#            url: http://codeception.local/api/v1
-#            depends: PhpBrowser
-#            part: Json
-#        - \Helper\Api
-#        - \Helper\Acceptance
-#        - PhpBrowser:
-#            url: http://codeception.local/api/v1

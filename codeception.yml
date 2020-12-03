@@ -8,6 +8,8 @@ coverage:
     enabled: true
     include:
       - src/*
+    exclude:
+      - src/Controller/*
 actor_suffix: Tester
 extensions:
     enabled:
