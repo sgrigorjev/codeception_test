@@ -2,9 +2,9 @@
 
 namespace CodeceptionCuriosity\Controller;
 
+use Laminas\Diactoros\Response\HtmlResponse;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Zend\Diactoros\Response\HtmlResponse;
 use CodeceptionCuriosity\Container;
 
 class IndexController

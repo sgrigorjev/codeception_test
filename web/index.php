@@ -2,9 +2,7 @@
 
 require_once "../vendor/autoload.php";
 
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
-use Zend\Diactoros\{ServerRequestFactory, Response};
+use Laminas\Diactoros\ServerRequestFactory;
 use CodeceptionCuriosity\Controller;
 
 $router = new League\Route\Router();
